@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e9ac04;
+  color:hsl(0, 0%, 0%);
+  overflow: hidden;
+}
+#one{
+  margin-top: 2px;
+}
+.door-scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e9ac04;
+  overflow: hidden;
+}
+
+.door {
+  width: 50%;
+  height: 100%;
+  background-image: url("assets/lisbon.svg");  /* Your chosen design */
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  border: 5px solid #c48f00;
+  box-shadow: inset 0 0 20px #000000cc;
+  transition: transform 2s ease-in-out;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.left-door {
+  left: 0;
+  transform-origin: left;
+}
+
+.right-door {
+  right: 0;
+  transform-origin: right;
+}
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #ffe9d1, #fbc2eb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+
+.welcome-screen h1 {
+  font-size: 3em;
+  color: #c71585;
+  animation: fadeInUp 2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#fireworks-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  pointer-events: none;
+}
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+}
+
+.falling-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.flower {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('assets/flower.png');
+  background-size: cover;
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.flower-left,
+.flower-right {
+  position: absolute;
+  top: 10%;
+  width: 80px;
+  height: 80px;
+  background: url('assets/flower.png') no-repeat center/contain; 
+  animation: float 4s infinite ease-in-out;
+  z-index: 3;
+}
+
+.flower-left {
+  left: 10%;
+}
+.flower-right {
+  right: 10%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+#open-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background: #ffd700;
+  color: #000;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  z-index: 4;
+  border-radius: 10px;
+}
+
+.content {
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10vh;
+  animation: fadeIn 2s ease forwards;
+  display: none;
+}
+
+.content img {
+  max-width: 300px;
+  height: 450px;
+  border-radius: 12px;
+  margin-top: 5px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

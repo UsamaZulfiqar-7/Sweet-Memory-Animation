@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surprise</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.1/dist/fireworks.js"></script>
+
+</head>
+<body>
+  <audio id="bg-music" src="assets/song.mp3" loop></audio>
+  <audio id="door-sound" src="assets/mixkit-creaky-door-open-195.wav"></audio>
+
+  <div class="door-scene">
+    <div class="flower-left"></div>
+    <div class="flower-right"></div>
+
+    <div class="door left-door"></div>
+    <div class="door right-door"></div>
+
+    <button id="open-btn">Lets Celebrate</button>
+  </div>
+ <div class="welcome-screen hidden">
+  <h1><pre>Welcome, Madam jiiiiiii 💛
+       Love You  ❤️❤️❤️
+      </pre>
+  </h1>
+</div>
+
+  <div class="content hidden">
+    <h1 id="one">Meri Jaan 💫</h1>
+    <p>Just a little something to remind you of our sweetest moments together... ❤️</p>
+    <img src="assets/image7.jpg" alt="Special Memory"/>
+  </div>
+  <div class="falling-flowers hidden" id="flower-container"></div>
+
+  <script src="script.js"></script>
+  <canvas id="fireworks-canvas" class="hidden"></canvas>
+
+</body>
+</html>
